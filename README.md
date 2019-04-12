@@ -1,6 +1,6 @@
 # Batalha Naval
 
-&nbsp;&nbsp;Este projeto consiste em criar um jogo em C++ similar ao game Battleship (ou batalha naval), onde todas suas instruções, dicas e requisitos para a avaliação estão sendo descritos na [wiki](https://gitlab.com/oofga/eps/eps_2019_1/ep1/wikis/home) do repositório.
+Este projeto consiste em criar um jogo em C++ similar ao game Battleship (ou batalha naval), onde todas suas instruções, dicas e requisitos para a avaliação estão sendo descritos na [wiki](https://gitlab.com/oofga/eps/eps_2019_1/ep1/wikis/home) do repositório.
 
 ## Descrição do Projeto
 
@@ -9,6 +9,7 @@ O projeto teve como objetivo construir um jogo de batalha naval para 2 jogadores
 ## Como jogar
 
 * Cada jogador define seu nome e a posição de cada embarcação
+* Um navio só pode ser posicionado na vertical ou horizontal
 * Ao começo de cada turno o jogador deverá definir a posição no mapa em que deseja lançar o míssil (posição x e y)
 * Cada embarcação possui tamanhos e habilidades diferentes
 
@@ -32,7 +33,7 @@ Submarino é uma embarcação especializada para operar submersa. Sendo assim, o
 
 ### Canoa
 
-O barco mais frágil, feito de madeira e contendo poucos passageiros, é destruído fácilmente, apenas um míssil em sua localização. Mesmo sendo fŕagil pode garantir uma vantagem ao ser de difícil localização, já que ocupa apenas uma casa.
+O barco mais frágil, feito de madeira e contendo poucos passageiros, é destruído fácilmente, apenas um míssil em sua localização. Mesmo sendo frágil pode garantir uma vantagem ao ser de difícil localização, já que ocupa apenas uma casa.
 
 * Quantidade de Casas: 1
 * Habilidade: Nenhuma
@@ -44,6 +45,7 @@ O barco mais frágil, feito de madeira e contendo poucos passageiros, é destru�
 ## Créditos e Contatos
 
 * Sérgio de Almeida Cipriano Júnior (sergiosacj@hotmail.com.br): principal e único programador
+* Conceito e regras do projeto [wiki](https://gitlab.com/oofga/eps/eps_2019_1/ep1/wikis/home)
 
 
 
