@@ -24,10 +24,9 @@ public:
     void set_tamanho(int tamanho);
     int get_resistencia();
     void set_resistencia(int resistencia);
-    int get_coordenadasX();
-	int get_coordenadasY();
+    pair<int, int> get_coordenadas();
     void set_coordenadas(int x, int y);
-	string get_direcaoDoBarco();
+    string get_direcaoDoBarco();
     void set_direcaoDoBarco(string direcaoDoBarco);
     
 };

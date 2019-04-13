@@ -26,11 +26,8 @@ int Embarcacoes::get_resistencia(){
 void Embarcacoes::set_resistencia(int resistencia){
     this->resistencia = resistencia;
 }
-int Embarcacoes::get_coordenadasX(){
-    return coordenadas.first;
-}
-int Embarcacoes::get_coordenadasY(){
-    return coordenadas.second;
+pair<int, int> Embarcacoes::get_coordenadas(){
+    return coordenadas;
 }
 void Embarcacoes::set_coordenadas(int x, int y){
     this->coordenadas.first = x;
