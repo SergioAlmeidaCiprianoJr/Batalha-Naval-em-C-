@@ -7,7 +7,11 @@
 using namespace std;
 
 Embarcacoes::Embarcacoes(){
-    //cout << "Embarcacao criada com sucesso!!!!\n";
+    tamanho = 0;
+    resistencia = 0;
+    coordenadas = make_pair(0, 0);
+    direcao = "";
+	//cout << "Embarcacao criada com sucesso!!!!\n";
 }
 
 Embarcacoes::~Embarcacoes(){
@@ -33,9 +37,9 @@ void Embarcacoes::set_coordenadas(int x, int y){
     this->coordenadas.first = x;
     this->coordenadas.second = y;
 }
-string Embarcacoes::get_direcaoDoBarco(){
-    return direcaoDoBarco;
+string Embarcacoes::get_direcao(){
+    return direcao;
 }
-void Embarcacoes::set_direcaoDoBarco(string direcaoDoBarco){
-    this->direcaoDoBarco = direcaoDoBarco;
+void Embarcacoes::set_direcao(string direcao){
+    this->direcao = direcao;
 }

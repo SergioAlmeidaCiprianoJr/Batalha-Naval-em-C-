@@ -14,7 +14,7 @@ private:
     int tamanho;
     int resistencia;
     pair<int, int> coordenadas;
-    string direcaoDoBarco;
+    string direcao;
 
 public:
     Embarcacoes();    
@@ -26,8 +26,8 @@ public:
     void set_resistencia(int resistencia);
     pair<int, int> get_coordenadas();
     void set_coordenadas(int x, int y);
-    string get_direcaoDoBarco();
-    void set_direcaoDoBarco(string direcaoDoBarco);
+    string get_direcao();
+    void set_direcao(string direcao);
     
 };
 
