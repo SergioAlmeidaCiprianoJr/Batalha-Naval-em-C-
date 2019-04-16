@@ -23,14 +23,19 @@ void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
     this->embarcacoesRestantes = embarcacoesRestantes; 
 }
 void Mapa::desenhaMapa(){
-    for(int coluna = 0; coluna<13; coluna++){
-        for(int linha = 0; linha<13; linha++){
-            
+	printf("\t~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~\n\t");
+    for(int linha = 0; linha<13; linha++){
+        for(int coluna = 0; coluna<13; coluna++){
+            if(tamanho[linha][coluna] == -1) printf("***");
+            else printf("    ");
         }
+        printf("\n");
+        printf("\t~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~\n");
+        if(linha!=12) printf("\t");
     }
 }
 void Mapa::posicionaEmbarcacao(int coordenadaX, int coordenadaY, int tamanhoEmbarcacao, string direcao){
-       
+
 }
 void Mapa::afundaEmbarcacao(int coordenadaX, int coordenadaY, int tamanhoEmbarcacao, string direcao){
     
