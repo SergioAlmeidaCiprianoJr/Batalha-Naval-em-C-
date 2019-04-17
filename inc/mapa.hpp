@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include <fstream>
 
 using namespace std;
@@ -20,8 +21,8 @@ public:
     int get_embarcacoesRestantes();
     void set_embarcacoesRestantes(int embarcacoesRestantes);
     void desenhaMapa();
-    void posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao);
-    void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao);
+    void posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao, int resistencia);
+    void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao, int resistencia);
     
 };
 
