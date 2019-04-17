@@ -3,21 +3,19 @@
 
 #include "embarcacoes.hpp"
 #include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <fstream>
 
 using namespace std;
 
 class PortaAviao: public Embarcacoes {
 
-private:
-
-	int habilidade;
-
 public:
     PortaAviao();    
     ~PortaAviao();
     
-    int get_habilidade();
-    void set_habilidade(int rodada);
+    int desviaMissil();
     
 };
 
