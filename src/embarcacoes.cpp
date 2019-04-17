@@ -1,6 +1,7 @@
 #include "embarcacoes.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include <fstream>
 
 using namespace std;
