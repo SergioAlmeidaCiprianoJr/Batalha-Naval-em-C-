@@ -1,13 +1,15 @@
 #include "mapa.hpp"
+#include "embarcacoes.hpp"
+#include "portaAviao.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <utility>
 
 using namespace std;
 
 Mapa::Mapa(){
     tamanho[13][13] = {};
+	//tamanho[linha][coluna]
     embarcacoesRestantes = 0;
     //cout << "Mapa criado com sucesso!!!!\n";
 }
@@ -39,9 +41,9 @@ void Mapa::desenhaMapa(){
     }
     
 }
-void Mapa::posicionaEmbarcacao(int coordenadaX, int coordenadaY, int tamanhoEmbarcacao, string direcao){
+void Mapa::posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanhoEmbarcacao, string direcao){
 
 }
-void Mapa::afundaEmbarcacao(int coordenadaX, int coordenadaY, int tamanhoEmbarcacao, string direcao){
+void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanhoEmbarcacao, string direcao){
     
 }

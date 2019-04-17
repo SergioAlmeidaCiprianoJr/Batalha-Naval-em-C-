@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <utility>
 
 using namespace std;
 
@@ -21,8 +20,8 @@ public:
     int get_embarcacoesRestantes();
     void set_embarcacoesRestantes(int embarcacoesRestantes);
     void desenhaMapa();
-    void posicionaEmbarcacao(int coordenadaX, int coordenadaY, int tamanho, string direcao);
-    void afundaEmbarcacao(int coordenadaX, int coordenadaY, int tamanho, string direcao);
+    void posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao);
+    void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao);
     
 };
 
