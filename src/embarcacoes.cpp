@@ -9,9 +9,10 @@ using namespace std;
 Embarcacoes::Embarcacoes(){
     tamanho = 0;
     resistencia = 0;
-    coordenadas = make_pair(0, 0);
+    coordenadaColuna = 0;
+    coordenadaLinha = 0;
     direcao = "";
-	//cout << "Embarcacao criada com sucesso!!!!\n";
+    //cout << "Embarcacao criada com sucesso!!!!\n";
 }
 
 Embarcacoes::~Embarcacoes(){
@@ -30,12 +31,17 @@ int Embarcacoes::get_resistencia(){
 void Embarcacoes::set_resistencia(int resistencia){
     this->resistencia = resistencia;
 }
-pair<int, int> Embarcacoes::get_coordenadas(){
-    return coordenadas;
+int Embarcacoes::get_coordenadaColuna(){
+    return coordenadaColuna;
 }
-void Embarcacoes::set_coordenadas(int x, int y){
-    this->coordenadas.first = x;
-    this->coordenadas.second = y;
+void Embarcacoes::set_coordenadaColuna(int coordenadaColuna){
+    this->coordenadaColuna = coordenadaColuna;
+}
+int Embarcacoes::get_coordenadaLinha(){
+    return coordenadaLinha;
+}
+void Embarcacoes::set_coordenadaLinha(int coordenadaLinha){
+    this->coordenadaLinha = coordenadaLinha;
 }
 string Embarcacoes::get_direcao(){
     return direcao;

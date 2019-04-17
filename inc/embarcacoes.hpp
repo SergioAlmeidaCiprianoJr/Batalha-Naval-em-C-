@@ -13,7 +13,8 @@ class Embarcacoes {
 private:
     int tamanho;
     int resistencia;
-    pair<int, int> coordenadas;
+    int coordenadaColuna;
+	int coordenadaLinha;
     string direcao;
 
 public:
@@ -24,8 +25,10 @@ public:
     void set_tamanho(int tamanho);
     int get_resistencia();
     void set_resistencia(int resistencia);
-    pair<int, int> get_coordenadas();
-    void set_coordenadas(int x, int y);
+    int get_coordenadaColuna();
+    void set_coordenadaColuna(int coordenadaColuna);
+    int get_coordenadaLinha();
+    void set_coordenadaLinha(int coordenadaLinha);
     string get_direcao();
     void set_direcao(string direcao);
     
