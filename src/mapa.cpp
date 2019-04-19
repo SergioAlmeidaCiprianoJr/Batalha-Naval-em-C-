@@ -1,5 +1,7 @@
 #include "mapa.hpp"
+#include "embarcacoes.hpp"
 #include "portaAviao.hpp"
+#include "submarino.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -30,8 +32,8 @@ void Mapa::desenhaMapa(){
 	
     for(int linha = 0; linha<13; linha++){
         for(int coluna = 0; coluna<13; coluna++){
-            if(tamanho[linha][coluna] == -1) printf("øøø "); //atingido       
-            if(tamanho[linha][coluna] == -2) printf("*** "); //destruído
+            if(tamanho[linha][coluna] == 'a') printf("øøø "); //atingido       
+            if(tamanho[linha][coluna] == 'd') printf("*** "); //destruído
             else printf("~~~ ");
         }
         cout << endl;
@@ -41,9 +43,9 @@ void Mapa::desenhaMapa(){
     }
     
 }
-void Mapa::posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanhoEmbarcacao, string direcao, int resistencia){
+void Mapa::posicionaEmbarcacao(int *posicao, int resistencia){
 
 }
-void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanhoEmbarcacao, string direcao, int resistencia){
+void Mapa::afundaEmbarcacao(int *posicao, int resistencia){
     
 }

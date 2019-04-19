@@ -11,7 +11,7 @@ using namespace std;
 class Mapa {
 
 private:
-    int tamanho[13][13];
+    char tamanho[13][13];
     int embarcacoesRestantes;
 
 public:
@@ -21,8 +21,8 @@ public:
     int get_embarcacoesRestantes();
     void set_embarcacoesRestantes(int embarcacoesRestantes);
     void desenhaMapa();
-    void posicionaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao, int resistencia);
-    void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, int tamanho, string direcao, int resistencia);
+    void posicionaEmbarcacao(int *posicao, int resistencia);
+    void afundaEmbarcacao(int *posicao, int resistencia);
     
 };
 
