@@ -11,12 +11,16 @@ using namespace std;
 
 class PortaAviao: public Embarcacoes {
 
+private:
+    int posicao[2][4];
+
 public:
     PortaAviao();    
     ~PortaAviao();
     
     int desviaMissil();
-    
+    int* get_posicao();
+    void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
 };
 
 #endif
