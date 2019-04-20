@@ -7,12 +7,12 @@
 using namespace std;
 
 Embarcacoes::Embarcacoes(){
-    tamanho = 0;
+    casas = 0;
     resistencia = 0;
     coordenadaColuna = 0;
     coordenadaLinha = 0;
     direcao = "";
-	tipo = 0;
+    tipo = 0;
     //cout << "Embarcacao criada com sucesso!!!!\n";
 }
 
@@ -20,11 +20,11 @@ Embarcacoes::~Embarcacoes(){
     //cout << "Embarcacao destruída com sucesso!!!!\n";
 }
 
-int Embarcacoes::get_tamanho(){
-    return tamanho;
+int Embarcacoes::get_casas(){
+    return casas;
 }
-void Embarcacoes::set_tamanho(int tamanho){
-    this->tamanho = tamanho;
+void Embarcacoes::set_casas(int casas){
+    this->casas = casas;
 }
 int Embarcacoes::get_resistencia(){
     return resistencia;
