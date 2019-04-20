@@ -15,7 +15,8 @@ private:
     int posicao[2][4];
 
 public:
-    PortaAviao();    
+    PortaAviao(); 
+    PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~PortaAviao();
     
     int desviaMissil();

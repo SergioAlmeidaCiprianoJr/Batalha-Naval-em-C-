@@ -8,7 +8,7 @@
 using namespace std;
 
 PortaAviao::PortaAviao(){
-    set_tamanho(4);
+    set_casas(4);
     set_resistencia(1);
     set_coordenadaColuna(0);
     set_coordenadaLinha(0);
@@ -16,6 +16,16 @@ PortaAviao::PortaAviao(){
     posicao[2][4] = {};
     set_tipo('p');
     //cout << "portaAviao criada com sucesso!!!!\n";
+}
+
+PortaAviao::PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao){
+    set_casas(4);
+    set_resistencia(1);
+    set_coordenadaColuna(coordenadaColuna);
+    set_coordenadaLinha(coordenadaLinha);
+    set_direcao(direcao);
+    posicao[2][4] = {};
+    set_tipo('p');
 }
 
 PortaAviao::~PortaAviao(){
