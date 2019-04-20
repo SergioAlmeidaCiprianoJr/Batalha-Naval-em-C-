@@ -11,10 +11,11 @@ using namespace std;
 class Mapa {
 
 private:
-    char tamanho[13][13];
     int embarcacoesRestantes;
 
 public:
+    char tamanho[13][13];
+    
     Mapa();    
     ~Mapa();
     
