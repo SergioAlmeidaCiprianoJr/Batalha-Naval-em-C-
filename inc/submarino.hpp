@@ -6,22 +6,24 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
 class Submarino: public Embarcacoes {
 
 private:
-	int posicao[2][2];
+	vector<vector<int>> posicao;
 
 public:
     Submarino();    
+    Submarino(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~Submarino();
     
-    void resisteMissil(int coordenadaColuna, int coordenadaLinha);
-    int* get_posicao();
+    void tamanhoSubmarino(int tamanho);
+    void resisteMissil(int coordenadaColuna, int coordenadaLinha, vector<vector<char>> tamanho, Mapa *submarino);
+    vector<vector<int>> get_posicao();
     void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
-    
 };
 
 #endif
