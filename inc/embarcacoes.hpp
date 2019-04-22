@@ -6,10 +6,11 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
-class Embarcacoes: public Mapa {
+class Embarcacoes {
 
 private:
     int casas;
