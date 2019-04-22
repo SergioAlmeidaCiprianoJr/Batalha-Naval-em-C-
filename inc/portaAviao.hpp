@@ -6,21 +6,23 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
 class PortaAviao: public Embarcacoes {
 
 private:
-    int posicao[2][4];
+    vector<vector<int>> posicao;
 
 public:
     PortaAviao(); 
     PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~PortaAviao();
     
+    void tamanhoPortaAviao(int tamanho);
     int desviaMissil();
-    int* get_posicao();
+    vector<vector<int>> get_posicao();
     void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
 };
 
