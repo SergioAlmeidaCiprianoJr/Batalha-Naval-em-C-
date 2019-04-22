@@ -2,15 +2,17 @@
 #include "embarcacoes.hpp"
 #include "portaAviao.hpp"
 #include "submarino.hpp"
+#include "canoa.hpp"
+#include "colisao.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
 Mapa::Mapa(){
-    tamanho[13][13] = {};
-	//tamanho[linha][coluna]
+    //tamanho[linha][coluna]
     embarcacoesRestantes = 0;
     //cout << "Mapa criado com sucesso!!!!\n";
 }
@@ -19,12 +21,30 @@ Mapa::~Mapa(){
     //cout << "Mapa deletado com sucesso!!!!\n";
 }
 
+void Mapa::tamanhoMapa(int coluna, int linha){
+    tamanho.resize(coluna);
+    for(int i = 0 ; i < coluna ; ++i)
+    {
+        tamanho[i].resize(linha);
+    }
+}
+
+vector<vector<char>> Mapa::get_tamanho(){
+    return tamanho;
+}
+
+void Mapa::set_tamanho(int coluna, int linha, char tipo){
+    this->tamanho[coluna][linha] = tipo;
+}
+
 int Mapa::get_embarcacoesRestantes(){
     return embarcacoesRestantes;
 }
+
 void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
     this->embarcacoesRestantes = embarcacoesRestantes; 
 }
+
 void Mapa::desenhaMapa(){
 
     int colunaAtual = 0;
@@ -41,11 +61,5 @@ void Mapa::desenhaMapa(){
         if(linha!=12) printf("    %02d  ", colunaAtual);
         else cout << endl;
     }
-    
-}
-void Mapa::posicionaEmbarcacao(int *posicao, int resistencia){
-
-}
-void Mapa::afundaEmbarcacao(int *posicao, int resistencia){
     
 }

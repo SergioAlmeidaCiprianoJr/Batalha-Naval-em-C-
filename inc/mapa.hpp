@@ -5,6 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -12,18 +13,18 @@ class Mapa {
 
 private:
     int embarcacoesRestantes;
+	vector<vector<char>> tamanho;
 
 public:
-    char tamanho[13][13];
-    
     Mapa();    
     ~Mapa();
     
+    void tamanhoMapa(int coluna, int linha);
+    vector<vector<char>> get_tamanho();
+    void set_tamanho(int coluna, int linha, char tipo);
     int get_embarcacoesRestantes();
     void set_embarcacoesRestantes(int embarcacoesRestantes);
     void desenhaMapa();
-    void posicionaEmbarcacao(int *posicao, int resistencia);
-    void afundaEmbarcacao(int *posicao, int resistencia);
     
 };
 
