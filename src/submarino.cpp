@@ -21,26 +21,29 @@ Submarino::Submarino(){
 
 Submarino::Submarino(int coordenadaColuna, int coordenadaLinha, string direcao){
     set_casas(4);
-    set_resistencia(1);
+    set_resistencia(2);
     set_coordenadaColuna(coordenadaColuna);
     set_coordenadaLinha(coordenadaLinha);
     set_direcao(direcao);
     set_tipo('s');
+    tamanhoSubmarino(2);
+    set_posicao(coordenadaColuna, coordenadaLinha, direcao);
 }
 Submarino::~Submarino(){
     //cout << "portaAviao destruída com sucesso!!!!\n";
 }
 
-void Submarino::tamanhoSubmarino(int tamanho){
+void Submarino::tamanhoSubmarino(int casas){
     posicao.resize(2);
     for(int i = 0 ; i < 2 ; ++i)
     {
-        posicao[i].resize(tamanho);
+        posicao[i].resize(casas);
     }
+    //posicao[abscissas][coordenadas]
 }
-void Submarino::resisteMissil(int coordenadaColuna, int coordenadaLinha, vector<vector<char>> tamanho, Mapa *submarino){
-    if(tamanho[coordenadaLinha][coordenadaColuna] == 's') (*submarino).set_tamanho(coordenadaLinha, coordenadaColuna, 'a');
-    else if(tamanho[coordenadaLinha][coordenadaColuna] == 'a') (*submarino).set_tamanho(coordenadaLinha, coordenadaColuna, 'd');    
+void Submarino::resisteMissil(int coordenadaColuna, int coordenadaLinha, vector<vector<char>> tamanho, Mapa *mapa){
+    if(tamanho[coordenadaLinha][coordenadaColuna] == 's') mapa->set_tamanho(coordenadaLinha, coordenadaColuna, 'a');
+    else if(tamanho[coordenadaLinha][coordenadaColuna] == 'a') mapa->set_tamanho(coordenadaLinha, coordenadaColuna, 'd');    
 }
 
 vector<vector<int>> Submarino::get_posicao(){
@@ -50,28 +53,28 @@ void Submarino::set_posicao(int coordenadaColuna, int coordenadaLinha, string di
     for(int eixoCoordenada = 0; eixoCoordenada<2; eixoCoordenada++){
         for(int coordenada = 0; coordenada<2; coordenada++){
              if(eixoCoordenada == 0){
-                 if(direcao == "direita"){
+                 if(direcao == "baixo"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                     coordenadaLinha++;
                  }
-                 else if(direcao == "esquerda"){
+                 else if(direcao == "cima"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                     coordenadaLinha--;
                  }
-                 else if(direcao == "cima" || direcao == "baixo"){
+                 else if(direcao == "direita" || direcao == "esquerda"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                  }
              }    
              else if(eixoCoordenada == 1){
-                 if(direcao == "baixo"){
+                 if(direcao == "direita"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                     coordenadaColuna++;
                  }
-                 else if(direcao == "cima"){
+                 else if(direcao == "esquerda"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                     coordenadaColuna--;
                  }
-                 else if(direcao == "direita" || direcao == "esquerda"){
+                 else if(direcao == "cima" || direcao == "baixo"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                  }
              }

@@ -14,6 +14,7 @@ using namespace std;
 Mapa::Mapa(){
     //tamanho[linha][coluna]
     embarcacoesRestantes = 0;
+    tamanhoMapa(13, 13);
     //cout << "Mapa criado com sucesso!!!!\n";
 }
 
@@ -53,7 +54,7 @@ void Mapa::desenhaMapa(){
     for(int linha = 0; linha<13; linha++){
         for(int coluna = 0; coluna<13; coluna++){
             if(tamanho[linha][coluna] == 'a') printf("øøø "); //atingido       
-            if(tamanho[linha][coluna] == 'd') printf("*** "); //destruído
+            else if(tamanho[linha][coluna] == 'd') printf("*** "); //destruído
             else printf("~~~ ");
         }
         cout << endl;

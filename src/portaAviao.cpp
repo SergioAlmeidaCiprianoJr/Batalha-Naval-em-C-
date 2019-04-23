@@ -25,14 +25,17 @@ PortaAviao::PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao
     set_coordenadaLinha(coordenadaLinha);
     set_direcao(direcao);
     set_tipo('p');
+    tamanhoPortaAviao(4);
+    set_posicao(coordenadaColuna, coordenadaLinha, direcao);
 }
 
-void PortaAviao::tamanhoPortaAviao(int tamanho){
+void PortaAviao::tamanhoPortaAviao(int casas){
     posicao.resize(2);
     for(int i = 0 ; i < 2 ; ++i)
     {
-        posicao[i].resize(tamanho);
+        posicao[i].resize(casas);
     }
+    //posicao[abscissas][coordenadas]
 }
 PortaAviao::~PortaAviao(){
     //cout << "portaAviao destruída com sucesso!!!!\n";
@@ -47,30 +50,30 @@ vector<vector<int>> PortaAviao::get_posicao(){
 }
 void PortaAviao::set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao){
     for(int eixoCoordenada = 0; eixoCoordenada<2; eixoCoordenada++){
-        for(int coordenada = 0; coordenada<2; coordenada++){
+        for(int coordenada = 0; coordenada<4; coordenada++){
              if(eixoCoordenada == 0){
-                 if(direcao == "direita"){
+                 if(direcao == "baixo"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                     coordenadaLinha++;
                  }
-                 else if(direcao == "esquerda"){
+                 else if(direcao == "cima"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                     coordenadaLinha--;
                  }
-                 else if(direcao == "cima" || direcao == "baixo"){
+                 else if(direcao == "direita" || direcao == "esquerda"){
                     posicao[eixoCoordenada][coordenada] = coordenadaLinha;
                  }
              }    
              else if(eixoCoordenada == 1){
-                 if(direcao == "baixo"){
+                 if(direcao == "direita"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                     coordenadaColuna++;
                  }
-                 else if(direcao == "cima"){
+                 else if(direcao == "esquerda"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                     coordenadaColuna--;
                  }
-                 else if(direcao == "direita" || direcao == "esquerda"){
+                 else if(direcao == "cima" || direcao == "baixo"){
                     posicao[eixoCoordenada][coordenada] = coordenadaColuna;
                  }
              }

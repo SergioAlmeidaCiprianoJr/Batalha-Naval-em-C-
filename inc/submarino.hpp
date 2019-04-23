@@ -20,7 +20,7 @@ public:
     Submarino(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~Submarino();
     
-    void tamanhoSubmarino(int tamanho);
+    void tamanhoSubmarino(int casas);
     void resisteMissil(int coordenadaColuna, int coordenadaLinha, vector<vector<char>> tamanho, Mapa *submarino);
     vector<vector<int>> get_posicao();
     void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
