@@ -18,7 +18,7 @@ public:
     void posicionaPortaAviao(vector<vector<int>> posicao, Mapa *tamanho);
 	void posicionaSubmarino(vector<vector<int>> posicao, Mapa *tamanho);
 	void posicionaCanoa(int coordenadaLinha, int coordenadaColuna, Mapa *tamanho);
-	void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, Mapa *tamanho, vector<vector<char>> mapa);
+	void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, Mapa *tamanho, vector<vector<string>> mapa);
     
 };
 
