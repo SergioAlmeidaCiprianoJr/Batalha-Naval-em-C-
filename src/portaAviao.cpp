@@ -14,7 +14,7 @@ PortaAviao::PortaAviao(){
     set_coordenadaColuna(0);
     set_coordenadaLinha(0);
     set_direcao("");
-    set_tipo('p');
+    set_tipo("PortaAviao");
     //cout << "portaAviao criada com sucesso!!!!\n";
 }
 
@@ -24,7 +24,7 @@ PortaAviao::PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao
     set_coordenadaColuna(coordenadaColuna);
     set_coordenadaLinha(coordenadaLinha);
     set_direcao(direcao);
-    set_tipo('p');
+    set_tipo("PortaAviao");
     tamanhoPortaAviao(4);
     set_posicao(coordenadaColuna, coordenadaLinha, direcao);
 }
@@ -39,11 +39,6 @@ void PortaAviao::tamanhoPortaAviao(int casas){
 }
 PortaAviao::~PortaAviao(){
     //cout << "portaAviao destruída com sucesso!!!!\n";
-}
-
-int PortaAviao::desviaMissil(){
-    if(rand()%2==0) return true;
-    else return false;
 }
 vector<vector<int>> PortaAviao::get_posicao(){
     return posicao;

@@ -17,15 +17,15 @@ private:
     int resistencia;
     int coordenadaColuna;
     int coordenadaLinha;
-    char tipo;
+    string tipo;
     string direcao;
 
 public:
     Embarcacoes();    
     ~Embarcacoes();
     
-    char get_tipo();
-    void set_tipo(char tipo);
+    string get_tipo();
+    void set_tipo(string tipo);
     int get_casas();
     void set_casas(int casas);
     int get_resistencia();

@@ -13,7 +13,7 @@ Embarcacoes::Embarcacoes(){
     coordenadaColuna = 0;
     coordenadaLinha = 0;
     direcao = "";
-    tipo = 0;
+    tipo = "";
     //cout << "Embarcacao criada com sucesso!!!!\n";
 }
 
@@ -45,10 +45,10 @@ int Embarcacoes::get_coordenadaLinha(){
 void Embarcacoes::set_coordenadaLinha(int coordenadaLinha){
     this->coordenadaLinha = coordenadaLinha;
 }
-char Embarcacoes::get_tipo(){
+string Embarcacoes::get_tipo(){
     return tipo;
 }
-void Embarcacoes::set_tipo(char tipo){
+void Embarcacoes::set_tipo(string tipo){
     this->tipo = tipo;
 }
 string Embarcacoes::get_direcao(){

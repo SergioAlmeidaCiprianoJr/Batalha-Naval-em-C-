@@ -13,15 +13,15 @@ class Mapa {
 
 private:
     int embarcacoesRestantes;
-	vector<vector<char>> tamanho;
+	vector<vector<string>> tamanho;
 
 public:
     Mapa();    
     ~Mapa();
     
     void tamanhoMapa(int coluna, int linha);
-    vector<vector<char>> get_tamanho();
-    void set_tamanho(int coluna, int linha, char tipo);
+    vector<vector<string>> get_tamanho();
+    void set_tamanho(int coluna, int linha, string tipo);
     int get_embarcacoesRestantes();
     void set_embarcacoesRestantes(int embarcacoesRestantes);
     void desenhaMapa();

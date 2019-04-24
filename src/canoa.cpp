@@ -15,7 +15,7 @@ Canoa::Canoa(){
     set_coordenadaColuna(0);
     set_coordenadaLinha(0);
     set_direcao("");
-    set_tipo('c');
+    set_tipo("Canoa");
     //cout << "Canoa criada com sucesso!!!!\n";
 }
 Canoa::Canoa(int coordenadaColuna, int coordenadaLinha, string direcao){
@@ -24,7 +24,7 @@ Canoa::Canoa(int coordenadaColuna, int coordenadaLinha, string direcao){
     set_coordenadaColuna(coordenadaColuna);
     set_coordenadaLinha(coordenadaLinha);
     set_direcao(direcao);
-    set_tipo('c');
+    set_tipo("Canoa");
 }
 
 Canoa::~Canoa(){

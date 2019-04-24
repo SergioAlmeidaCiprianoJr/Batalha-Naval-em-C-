@@ -15,7 +15,7 @@ Submarino::Submarino(){
     set_coordenadaColuna(0);
     set_coordenadaLinha(0);
     set_direcao("");
-    set_tipo('s');
+    set_tipo("Submarino");
     //cout << "portaAviao criada com sucesso!!!!\n";
 }
 
@@ -25,7 +25,7 @@ Submarino::Submarino(int coordenadaColuna, int coordenadaLinha, string direcao){
     set_coordenadaColuna(coordenadaColuna);
     set_coordenadaLinha(coordenadaLinha);
     set_direcao(direcao);
-    set_tipo('s');
+    set_tipo("Submarino");
     tamanhoSubmarino(2);
     set_posicao(coordenadaColuna, coordenadaLinha, direcao);
 }
@@ -41,11 +41,6 @@ void Submarino::tamanhoSubmarino(int casas){
     }
     //posicao[abscissas][coordenadas]
 }
-void Submarino::resisteMissil(int coordenadaColuna, int coordenadaLinha, vector<vector<char>> tamanho, Mapa *mapa){
-    if(tamanho[coordenadaLinha][coordenadaColuna] == 's') mapa->set_tamanho(coordenadaLinha, coordenadaColuna, 'a');
-    else if(tamanho[coordenadaLinha][coordenadaColuna] == 'a') mapa->set_tamanho(coordenadaLinha, coordenadaColuna, 'd');    
-}
-
 vector<vector<int>> Submarino::get_posicao(){
     return posicao;
 }

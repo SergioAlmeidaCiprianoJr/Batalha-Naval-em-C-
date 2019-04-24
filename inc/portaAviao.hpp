@@ -21,7 +21,6 @@ public:
     ~PortaAviao();
     
     void tamanhoPortaAviao(int casas);
-    int desviaMissil();
     vector<vector<int>> get_posicao();
     void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
 };

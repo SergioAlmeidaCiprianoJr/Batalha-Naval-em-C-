@@ -30,11 +30,11 @@ void Mapa::tamanhoMapa(int coluna, int linha){
     }
 }
 
-vector<vector<char>> Mapa::get_tamanho(){
+vector<vector<string>> Mapa::get_tamanho(){
     return tamanho;
 }
 
-void Mapa::set_tamanho(int coluna, int linha, char tipo){
+void Mapa::set_tamanho(int coluna, int linha, string tipo){
     this->tamanho[coluna][linha] = tipo;
 }
 
@@ -47,14 +47,14 @@ void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
 }
 
 void Mapa::desenhaMapa(){
-
+	
     int colunaAtual = 0;
 	printf("\n\t00  01  02  03  04  05  06  07  08  09  10  11  12\n    00  ");
 	
     for(int linha = 0; linha<13; linha++){
         for(int coluna = 0; coluna<13; coluna++){
-            if(tamanho[linha][coluna] == 'a') printf("øøø "); //atingido       
-            else if(tamanho[linha][coluna] == 'd') printf("*** "); //destruído
+            if(tamanho[linha][coluna] == "atingido") printf("øøø "); //atingido       
+            else if(tamanho[linha][coluna] == "destruido") printf("*** "); //destruído
             else printf("~~~ ");
         }
         cout << endl;
