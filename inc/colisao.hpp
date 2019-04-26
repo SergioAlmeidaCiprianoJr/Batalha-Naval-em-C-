@@ -15,10 +15,10 @@ public:
     Colisao();    
     ~Colisao();
     
-    void posicionaPortaAviao(vector<vector<int>> posicao, Mapa *tamanho);
-	void posicionaSubmarino(vector<vector<int>> posicao, Mapa *tamanho);
-	void posicionaCanoa(int coordenadaLinha, int coordenadaColuna, Mapa *tamanho);
-	void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, Mapa *tamanho, vector<vector<string>> mapa);
+    void posicionaPortaAviao(vector<vector<int>> posicao, Jogador *tamanho);
+	void posicionaSubmarino(vector<vector<int>> posicao, Jogador *tamanho);
+	void posicionaCanoa(int coordenadaLinha, int coordenadaColuna, Jogador *tamanho);
+	void afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, Jogador *tamanho, vector<vector<string>> mapa);
     
 };
 

@@ -1,7 +1,6 @@
 #ifndef SUBMARINO_HPP
 #define SUBMARINO_HPP
 
-#include "embarcacoes.hpp"
 #include <iostream>
 #include <string>
 #include <stdlib.h>

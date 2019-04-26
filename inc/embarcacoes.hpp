@@ -1,7 +1,6 @@
 #ifndef EMBARCACOES_HPP
 #define EMBARCACOES_HPP
 
-#include "mapa.hpp"
 #include <iostream>
 #include <string>
 #include <stdlib.h>

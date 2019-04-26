@@ -1,7 +1,6 @@
 #ifndef CANOA_HPP
 #define CANOA_HPP
 
-#include "embarcacoes.hpp"
 #include <iostream>
 #include <string>
 #include <stdlib.h>

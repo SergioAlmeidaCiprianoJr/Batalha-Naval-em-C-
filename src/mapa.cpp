@@ -3,7 +3,6 @@
 #include "portaAviao.hpp"
 #include "submarino.hpp"
 #include "canoa.hpp"
-#include "colisao.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -43,11 +42,12 @@ int Mapa::get_embarcacoesRestantes(){
 }
 
 void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
-    this->embarcacoesRestantes = embarcacoesRestantes; 
+    this->embarcacoesRestantes += embarcacoesRestantes; 
 }
 
 void Mapa::desenhaMapa(){
 	
+	cout << "\033[2J\033[1;1H";//limpando terminal	
     int colunaAtual = 0;
 	printf("\n\t00  01  02  03  04  05  06  07  08  09  10  11  12\n    00  ");
 	
