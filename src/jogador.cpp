@@ -17,9 +17,10 @@ Jogador::Jogador(){
     tamanhoMapa(13, 13);
 }
 Jogador::Jogador(string nome){
-	nome = nome;
+	set_nome(nome);
     set_embarcacoesRestantes(0);
     tamanhoMapa(13, 13);
+    cout << nome << endl;
 }
 Jogador::~Jogador(){
 }
@@ -30,9 +31,9 @@ string Jogador::get_nome(){
 void Jogador::set_nome(string nome){
 	this->nome = nome;
 }
-bool Jogador::condicaoVitoria(){
-	if(get_embarcacoesRestantes() == 0){
-		cout << "Parabéns " << nome.c_str() << ", você GANHOUUUUUU!!!\n";
+bool Jogador::condicaoVitoria(int embarcacoesRestantesInimigo){
+	if(embarcacoesRestantesInimigo == 0){
+		cout << "Parabéns " << nome << ", você GANHOUUUUUU!!!\n";
 		return true;
 	}
 	else return false;
