@@ -22,19 +22,19 @@ Mapa::~Mapa(){
 }
 
 void Mapa::tamanhoMapa(int coluna, int linha){
-    tamanho.resize(coluna);
+    mapa.resize(coluna);
     for(int i = 0 ; i < coluna ; ++i)
     {
-        tamanho[i].resize(linha);
+        mapa[i].resize(linha);
     }
 }
 
-vector<vector<string>> Mapa::get_tamanho(){
-    return tamanho;
+vector<vector<string>> Mapa::get_mapa(){
+    return mapa;
 }
 
-void Mapa::set_tamanho(int coluna, int linha, string tipo){
-    this->tamanho[coluna][linha] = tipo;
+void Mapa::set_mapa(int coluna, int linha, string tipo){
+    this->mapa[coluna][linha] = tipo;
 }
 
 int Mapa::get_embarcacoesRestantes(){
@@ -53,8 +53,8 @@ void Mapa::desenhaMapa(){
 	
     for(int linha = 0; linha<13; linha++){
         for(int coluna = 0; coluna<13; coluna++){
-            if(tamanho[linha][coluna] == "atingido") printf("øøø "); //atingido       
-            else if(tamanho[linha][coluna] == "destruido") printf("*** "); //destruído
+            if(mapa[linha][coluna] == "atingido") printf("øøø "); //atingido       
+            else if(mapa[linha][coluna] == "destruido") printf("*** "); //destruído
             else printf("~~~ ");
         }
         cout << endl;
