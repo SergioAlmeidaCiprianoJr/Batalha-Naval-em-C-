@@ -38,9 +38,19 @@ O barco mais frágil, feito de madeira e contendo poucos passageiros, é destru�
 * Quantidade de Casas: 1
 * Habilidade: Nenhuma
 
-## Instruções para instalação e execução
+## Instruções para execução do jogo
 
-//descrever aqui como instalar e executar o jogo
+Após clonar o repositório:
+
+Para compilar:
+```
+$ make
+```
+
+Para rodar:
+```
+$ make run
+```
 
 ## Créditos e Contatos
 
