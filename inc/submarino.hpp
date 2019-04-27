@@ -15,6 +15,8 @@ public:
     Submarino();    
     Submarino(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~Submarino();
+
+    int afundaSubmarino(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
     
 };
 

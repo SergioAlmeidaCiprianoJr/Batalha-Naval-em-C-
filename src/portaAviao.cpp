@@ -30,3 +30,19 @@ PortaAviao::PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao
 
 PortaAviao::~PortaAviao(){
 }
+
+int PortaAviao::afundaPortaAviao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
+    if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao"){
+            srand (time(NULL));
+            int probabilidadeDesviar = rand() % 2 + 1;
+            if(probabilidadeDesviar%2 == 0) {
+                printf("\tVocê achou o Porta Aviões, mas ele desviou seu míssil!!\n");
+                return -1;//não atingiu
+            }	
+            else {
+                printf("\tVocê acabou de atingir o Porta Aviões inimigo!!\n");
+                return 0;//atingiu
+            }	
+    }
+    return 1;
+}    

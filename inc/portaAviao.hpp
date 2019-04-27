@@ -16,6 +16,7 @@ public:
     PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao);
     ~PortaAviao();
     
+    int afundaPortaAviao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "embarcacoes.hpp"
 #include "canoa.hpp"
-#include "mapa.hpp"	
 #include <iostream>
 #include <string>
 #include <stdlib.h>
@@ -29,4 +28,12 @@ Canoa::Canoa(int coordenadaColuna, int coordenadaLinha, string direcao){
 
 Canoa::~Canoa(){
     //cout << "Canoa destruída com sucesso!!!!\n";
+}
+
+int Canoa::afundaCanoa(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
+    if(mapa[coordenadaLinha][coordenadaColuna] == "Canoa"){
+		printf("\tVocê acabou de destruir a Canoa inimiga!!\n");
+        return 0;//atingiu
+	}
+    return 1;
 }

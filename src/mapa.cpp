@@ -11,14 +11,11 @@
 using namespace std;
 
 Mapa::Mapa(){
-    //tamanho[linha][coluna]
     embarcacoesRestantes = 0;
     tamanhoMapa(13, 13);
-    //cout << "Mapa criado com sucesso!!!!\n";
 }
 
 Mapa::~Mapa(){
-    //cout << "Mapa deletado com sucesso!!!!\n";
 }
 
 void Mapa::tamanhoMapa(int coluna, int linha){
@@ -26,6 +23,14 @@ void Mapa::tamanhoMapa(int coluna, int linha){
     for(int i = 0 ; i < coluna ; ++i)
     {
         mapa[i].resize(linha);
+    }
+
+    for(int j = 0 ; j < coluna ; ++j)
+    {
+        for(int i = 0 ; i < linha ; ++i)
+        {
+            mapa[j][i] = "agua";
+        }
     }
 }
 
@@ -35,14 +40,6 @@ vector<vector<string>> Mapa::get_mapa(){
 
 void Mapa::set_mapa(int coluna, int linha, string tipo){
     this->mapa[coluna][linha] = tipo;
-}
-
-int Mapa::get_embarcacoesRestantes(){
-    return embarcacoesRestantes;
-}
-
-void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
-    this->embarcacoesRestantes += embarcacoesRestantes; 
 }
 
 void Mapa::desenhaMapa(){
@@ -63,4 +60,63 @@ void Mapa::desenhaMapa(){
         else cout << endl;
     }
     
+}
+
+int Mapa::get_embarcacoesRestantes(){
+    return embarcacoesRestantes;
+}
+
+void Mapa::set_embarcacoesRestantes(int embarcacoesRestantes){
+    this->embarcacoesRestantes += embarcacoesRestantes; 
+}
+
+void Mapa::posicionaPortaAviao(vector<vector<int>> posicao){
+    for(int coordenada = 0; coordenada<4; coordenada++){
+        set_mapa(posicao[0][coordenada], posicao[1][coordenada], "PortaAviao");
+    	set_embarcacoesRestantes(1);
+    }    
+}
+
+void Mapa::posicionaSubmarino(vector<vector<int>> posicao){
+	for(int coordenada = 0; coordenada<2; coordenada++){
+    	set_mapa(posicao[0][coordenada], posicao[1][coordenada], "Submarino");
+    	set_embarcacoesRestantes(1);
+    }
+}
+
+void Mapa::posicionaCanoa(int coordenadaLinha, int coordenadaColuna){
+    set_mapa(coordenadaLinha, coordenadaColuna, "Canoa");
+	set_embarcacoesRestantes(1);
+}
+
+void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa, Mapa *alvo, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa){
+    int resultado;
+    if(mapa[coordenadaLinha][coordenadaColuna] != "agua"){
+        if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\tVocê já atingiu essa posição!!\n";
+        else if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao") {
+            resultado = portaAviao->afundaPortaAviao(coordenadaLinha, coordenadaColuna, mapa);
+            if(!resultado) {
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_embarcacoesRestantes(-1);
+            }    
+        }
+        else if(mapa[coordenadaLinha][coordenadaColuna] == "Submarino" || mapa[coordenadaLinha][coordenadaColuna] == "atingido") {
+            resultado = submarino->afundaSubmarino(coordenadaLinha, coordenadaColuna, mapa);
+            if(!resultado) {
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_embarcacoesRestantes(-1);
+            }    
+            if(resultado == -1){
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "atingido");
+            }
+        }
+        else if(mapa[coordenadaLinha][coordenadaColuna] == "Canoa"){
+            resultado = canoa->afundaCanoa(coordenadaLinha, coordenadaColuna, mapa);
+            if(!resultado) {
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_embarcacoesRestantes(-1);
+            } 
+        }
+    }
+    else cout << "\tVocê acertou a água\n";
 }

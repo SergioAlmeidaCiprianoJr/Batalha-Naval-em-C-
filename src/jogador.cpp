@@ -20,7 +20,6 @@ Jogador::Jogador(string nome){
 	set_nome(nome);
     set_embarcacoesRestantes(0);
     tamanhoMapa(13, 13);
-    cout << nome << endl;
 }
 Jogador::~Jogador(){
 }
