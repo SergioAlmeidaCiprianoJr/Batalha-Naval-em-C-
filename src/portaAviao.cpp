@@ -18,17 +18,6 @@ PortaAviao::PortaAviao(){
     tamanhoPosicao();
 }
 
-PortaAviao::PortaAviao(int coordenadaColuna, int coordenadaLinha, string direcao){
-    set_casas(4);
-    set_resistencia(1);
-    set_coordenadaColuna(coordenadaColuna);
-    set_coordenadaLinha(coordenadaLinha);
-    set_direcao(direcao);
-    set_tipo("PortaAviao");
-    tamanhoPosicao();
-    set_posicao(coordenadaColuna, coordenadaLinha, direcao);
-}
-
 PortaAviao::~PortaAviao(){
 }
 
