@@ -100,3 +100,11 @@ void Embarcacoes::set_posicao(int coordenadaColuna, int coordenadaLinha, string 
         }
     }
 }    
+
+int Embarcacoes::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
+    if(mapa[coordenadaLinha][coordenadaColuna] == "Embarcacao"){
+		printf("\tVocê acabou de destruir a Embarcacao inimiga!!\n");
+        return 0;//atingiu
+	}
+    return 1;
+}

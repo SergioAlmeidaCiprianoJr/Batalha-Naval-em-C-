@@ -24,9 +24,6 @@ public:
     Embarcacoes();    
     ~Embarcacoes();
     
-    void tamanhoPosicao();
-    vector<vector<int>> get_posicao();
-    void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);
     string get_tipo();
     void set_tipo(string tipo);
     int get_casas();
@@ -39,7 +36,11 @@ public:
     void set_coordenadaLinha(int coordenadaLinha);
     string get_direcao();
     void set_direcao(string direcao);
-      
+    vector<vector<int>> get_posicao();
+    void set_posicao(int coordenadaColuna, int coordenadaLinha, string direcao);  
+    void tamanhoPosicao();
+    virtual int afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
+
 };
 
 #endif

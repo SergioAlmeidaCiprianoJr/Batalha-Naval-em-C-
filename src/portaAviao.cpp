@@ -21,7 +21,7 @@ PortaAviao::PortaAviao(){
 PortaAviao::~PortaAviao(){
 }
 
-int PortaAviao::afundaPortaAviao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
+int PortaAviao::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
     if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao"){
             srand (time(NULL));
             int probabilidadeDesviar = rand() % 2 + 1;

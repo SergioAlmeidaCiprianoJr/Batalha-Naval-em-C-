@@ -15,7 +15,7 @@ public:
     Canoa(); 
     ~Canoa();
 
-    int afundaCanoa(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
+    int afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
     
 };
 

@@ -14,8 +14,9 @@ class PortaAviao: public Embarcacoes {
 public:
     PortaAviao(); 
     ~PortaAviao();
-    
-    int afundaPortaAviao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
+
+    int afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
+
 };
 
 #endif

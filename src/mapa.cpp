@@ -94,14 +94,14 @@ void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<ve
     if(mapa[coordenadaLinha][coordenadaColuna] != "agua"){
         if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\tVocê já destruiu essa posição!!\n";
         else if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao") {
-            resultado = portaAviao->afundaPortaAviao(coordenadaLinha, coordenadaColuna, mapa);
+            resultado = portaAviao->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
                 alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
                 alvo->set_embarcacoesRestantes(-1);
             }    
         }
         else if(mapa[coordenadaLinha][coordenadaColuna] == "Submarino" || mapa[coordenadaLinha][coordenadaColuna] == "atingido") {
-            resultado = submarino->afundaSubmarino(coordenadaLinha, coordenadaColuna, mapa);
+            resultado = submarino->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
                 alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
                 alvo->set_embarcacoesRestantes(-1);
@@ -111,7 +111,7 @@ void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<ve
             }
         }
         else if(mapa[coordenadaLinha][coordenadaColuna] == "Canoa"){
-            resultado = canoa->afundaCanoa(coordenadaLinha, coordenadaColuna, mapa);
+            resultado = canoa->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
                 alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
                 alvo->set_embarcacoesRestantes(-1);

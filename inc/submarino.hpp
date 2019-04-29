@@ -14,9 +14,9 @@ class Submarino: public Embarcacoes {
 public:
     Submarino();    
     ~Submarino();
-
-    int afundaSubmarino(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
     
+    int afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa);
+
 };
 
 #endif
