@@ -22,7 +22,7 @@ GerenciaArquivo::GerenciaArquivo(string arquivo){
 	}
 }
 GerenciaArquivo::~GerenciaArquivo(){
-	
+	file.close();
 }
 
 string GerenciaArquivo::get_arquivo(){
@@ -30,6 +30,10 @@ string GerenciaArquivo::get_arquivo(){
 }
 void GerenciaArquivo::set_arquivo(string arquivo){
 	this->arquivo = arquivo;
+}
+void leituraLixo(int linhas){
+	string linha;
+	for(int i = 0; i<linhas; i++) getline(file, linha);
 }
 int GerenciaArquivo::leituraCoordenadaLinha(){
 	int linha;
@@ -51,4 +55,3 @@ string GerenciaArquivo::leituraDirecao(){
 	file >> direcao;
 	return direcao;
 }
-

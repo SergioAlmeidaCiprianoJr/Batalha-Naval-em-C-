@@ -20,6 +20,7 @@ public:
     
     string get_arquivo();
     void set_arquivo(string arquivo);
+    void leituraLixo(int linhas);
     int leituraCoordenadaLinha();
     int leituraCoordenadaColuna();
     string leituraEmbarcacao();
