@@ -46,43 +46,11 @@ int main(){
 
 	//escaneando e posicionando barcos no mapa do jogador1
 	GerenciaArquivo arquivo(nomes);
-	for(int i = 0; i<12; i++){
-		int linha = arquivo.leituraCoordenadaLinha();
-		int coluna = arquivo.leituraCoordenadaColuna();
-		string embarcacao = arquivo.leituraEmbarcacao();
-		string direcao = arquivo.leituraDirecao();
-		if(embarcacao == "canoa" || embarcacao == "Canoa") {
-			jogador1.posicionaCanoa(linha, coluna);
-		}
-		if(embarcacao == "submarino" || embarcacao == "Submarino") {
-			submarino.set_posicao(coluna, linha, direcao);
-			jogador1.posicionaSubmarino(submarino.get_posicao());
-		}
-		if(embarcacao == "porta-avioes" || embarcacao == "PortaAvioes" || embarcacao == "portaAvioes") {
-			portaAviao.set_posicao(coluna, linha, direcao);
-			jogador1.posicionaPortaAviao(portaAviao.get_posicao());
-		}
-	}
+	arquivo.leitura(&jogador1, &submarino, &portaAviao);
 	
 	//escaneando e posicionando barcos no mapa do jogador2
 	arquivo.leituraLixo(5);
-	for(int i = 0; i<12; i++){
-		int linha = arquivo.leituraCoordenadaLinha();
-		int coluna = arquivo.leituraCoordenadaColuna();
-		string embarcacao = arquivo.leituraEmbarcacao();
-		string direcao = arquivo.leituraDirecao();
-		if(embarcacao == "canoa" || embarcacao == "Canoa") {
-			jogador2.posicionaCanoa(linha, coluna);
-		}
-		if(embarcacao == "submarino" || embarcacao == "Submarino") {
-			submarino.set_posicao(coluna, linha, direcao);
-			jogador2.posicionaSubmarino(submarino.get_posicao());
-		}
-		if(embarcacao == "porta-avioes" || embarcacao == "PortaAvioes" || embarcacao == "portaAvioes") {
-			portaAviao.set_posicao(coluna, linha, direcao);
-			jogador2.posicionaPortaAviao(portaAviao.get_posicao());
-		}
-	}
+	arquivo.leitura(&jogador2, &submarino, &portaAviao);
 
 	while(1){
 

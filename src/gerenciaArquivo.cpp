@@ -40,23 +40,25 @@ void GerenciaArquivo::leituraLixo(int numerolinhas){
 	string leLinha;
 	for(int i = 0; i<numerolinhas; i++) getline(file, leLinha);
 }
-int GerenciaArquivo::leituraCoordenadaLinha(){
-	int linha;
-	file >> linha;
-	return linha;
-}
-int GerenciaArquivo::leituraCoordenadaColuna(){
-	int coluna;
-	file >> coluna;
-	return coluna;
-}
-string GerenciaArquivo::leituraEmbarcacao(){
-	string embarcacao;
-	file >> embarcacao;
-	return embarcacao;
-}
-string GerenciaArquivo::leituraDirecao(){
-	string direcao;
-	file >> direcao;
-	return direcao;
+void GerenciaArquivo::leitura(Jogador *jogador, Submarino *submarino, PortaAviao *portaAviao){	
+	for(int i = 0; i<12; i++){
+
+		int linha;
+		int coluna;
+		string embarcacao; 
+		string direcao;
+		file >> linha >> coluna >> embarcacao >> direcao;
+
+		if(embarcacao == "canoa" || embarcacao == "Canoa") {
+			jogador->posicionaCanoa(linha, coluna);
+		}
+		if(embarcacao == "submarino" || embarcacao == "Submarino") {
+			submarino->set_posicao(coluna, linha, direcao);
+			jogador->posicionaSubmarino(submarino->get_posicao());
+		}
+		if(embarcacao == "porta-avioes" || embarcacao == "PortaAvioes" || embarcacao == "portaAvioes") {
+			portaAviao->set_posicao(coluna, linha, direcao);
+			jogador->posicionaPortaAviao(portaAviao->get_posicao());
+		}
+	}
 }

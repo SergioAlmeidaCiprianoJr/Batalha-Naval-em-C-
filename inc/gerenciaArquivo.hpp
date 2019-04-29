@@ -22,10 +22,7 @@ public:
     string get_arquivo();
     void set_arquivo(string arquivo);
     void leituraLixo(int numerolinhas);//ignora algumas linhas do arquivo inuteis para criar o mapa
-    int leituraCoordenadaLinha();
-    int leituraCoordenadaColuna();
-    string leituraEmbarcacao();
-    string leituraDirecao();
+    void leitura(Jogador *jogador, Submarino *submarino, PortaAviao *portaAviao);
 
 };
 
