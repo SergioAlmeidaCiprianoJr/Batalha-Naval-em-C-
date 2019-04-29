@@ -15,6 +15,7 @@ public:
     Menu();    
     ~Menu();
     
+    void limpaTela();
     void desenhaTitulo();
     bool desenhaMenu();
     bool iniciaJogo(string entrada);

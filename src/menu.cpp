@@ -12,6 +12,10 @@ Menu::~Menu(){}
 
 string entrada;
 
+void Menu::limpaTela(){
+    cout << "\033[2J\033[1;1H";//limpando terminal 
+}
+
 void Menu::desenhaTitulo(){
     
     cout << endl;
@@ -41,14 +45,14 @@ bool Menu::desenhaMenu(){
 }
 bool Menu::iniciaJogo(string entrada){
     if(entrada == "1. Jogar" || entrada == "1" ||entrada == "Jogar") {
-        cout << "\033[2J\033[1;1H";//limpando terminal 
+        limpaTela();
         return 1;
     }    
     else return 0;
 }
 void Menu::regras(string entrada){
     if(entrada == "2. Regras" || entrada == "2" ||entrada == "Regras"){
-        cout << "\033[2J\033[1;1H";//limpando terminal
+        limpaTela();
         cout << "REGRAS:" << endl << endl;
         cout << "1.Cada jogador define seu nome e a posição de cada embarcação" << endl;
         cout << "2.Para definir a posição das embarcações basta alterar os arquivos na pasta 'doc', ou inserir um novo" << endl;
@@ -58,17 +62,17 @@ void Menu::regras(string entrada){
         cout << "Deseja voltar ao MENU[S/N]: ";
         cin >> entrada;
         if(entrada == "S" || entrada == "s") {
-            cout << "\033[2J\033[1;1H";//limpando terminal
+            limpaTela();
             desenhaMenu();
         }
         else{
-            cout << "\033[2J\033[1;1H";//limpando terminal            
+            limpaTela();           
         }
     }
 }
 bool Menu::encerraJogo(string entrada){
     if(entrada == "3. Sair" || entrada == "3" ||entrada == "Sair") {
-        cout << "\033[2J\033[1;1H";//limpando terminal 
+        limpaTela(); 
         return 1;
     }    
     else return 0;
