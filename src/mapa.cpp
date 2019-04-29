@@ -92,7 +92,7 @@ void Mapa::posicionaCanoa(int coordenadaLinha, int coordenadaColuna){
 void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa, Mapa *alvo, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa){
     int resultado;
     if(mapa[coordenadaLinha][coordenadaColuna] != "agua"){
-        if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\tVocê já atingiu essa posição!!\n";
+        if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\tVocê já destruiu essa posição!!\n";
         else if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao") {
             resultado = portaAviao->afundaPortaAviao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
@@ -106,7 +106,7 @@ void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<ve
                 alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
                 alvo->set_embarcacoesRestantes(-1);
             }    
-            if(resultado == -1){
+            else if(resultado == -1){
                 alvo->set_mapa(coordenadaLinha, coordenadaColuna, "atingido");
             }
         }

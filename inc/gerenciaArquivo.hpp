@@ -15,16 +15,18 @@ private:
 	string arquivo;
 
 public:
+    GerenciaArquivo();
     GerenciaArquivo(string arquivo);    
     ~GerenciaArquivo();
     
     string get_arquivo();
     void set_arquivo(string arquivo);
-    void leituraLixo(int linhas);
+    void leituraLixo(int numerolinhas);//ignora algumas linhas do arquivo inuteis para criar o mapa
     int leituraCoordenadaLinha();
     int leituraCoordenadaColuna();
     string leituraEmbarcacao();
     string leituraDirecao();
+
 };
 
 #endif

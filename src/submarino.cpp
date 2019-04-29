@@ -16,6 +16,7 @@ Submarino::Submarino(){
     set_coordenadaLinha(0);
     set_direcao("");
     set_tipo("Submarino");
+    tamanhoPosicao();
 }
 
 Submarino::Submarino(int coordenadaColuna, int coordenadaLinha, string direcao){

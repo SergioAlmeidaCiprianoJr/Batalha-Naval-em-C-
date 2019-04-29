@@ -9,6 +9,7 @@ O projeto teve como objetivo construir um jogo de batalha naval para 2 jogadores
 ## Como jogar
 
 * Cada jogador define seu nome e a posição de cada embarcação
+* Para definir a posição das embarcações basta alterar os arquivos na pasta 'doc', ou inserir um novo
 * Um navio só pode ser posicionado na vertical ou horizontal
 * Ao começo de cada turno o jogador deverá definir a posição no mapa em que deseja lançar o míssil (posição x e y)
 * Cada embarcação possui tamanhos e habilidades diferentes
@@ -41,6 +42,11 @@ O barco mais frágil, feito de madeira e contendo poucos passageiros, é destru�
 ## Instruções para execução do jogo
 
 Após clonar o repositório:
+
+Entre no diretório:
+```
+$ cd /ep1
+```
 
 Para compilar:
 ```

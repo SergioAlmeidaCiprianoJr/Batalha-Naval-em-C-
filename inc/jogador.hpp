@@ -21,7 +21,7 @@ public:
     
 	string get_nome();
 	void set_nome(string nome);
-    bool condicaoVitoria(int embarcacoesRestantesInimigo);
+    bool condicaoVitoria();
     
 };
 

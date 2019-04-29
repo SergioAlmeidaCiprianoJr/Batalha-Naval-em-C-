@@ -30,8 +30,8 @@ string Jogador::get_nome(){
 void Jogador::set_nome(string nome){
 	this->nome = nome;
 }
-bool Jogador::condicaoVitoria(int embarcacoesRestantesInimigo){
-	if(embarcacoesRestantesInimigo == 0){
+bool Jogador::condicaoVitoria(){
+	if(get_embarcacoesRestantes() == 0){
 		cout << "Parabéns " << nome << ", você GANHOUUUUUU!!!\n";
 		return true;
 	}

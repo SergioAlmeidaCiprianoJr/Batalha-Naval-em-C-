@@ -13,13 +13,18 @@
 using namespace std;
 ifstream file;
 
+GerenciaArquivo::GerenciaArquivo(){
+	arquivo = "";
+}
+
 GerenciaArquivo::GerenciaArquivo(string arquivo){
-	arquivo = arquivo;
+	this->arquivo = arquivo;
 	file.open(arquivo);
 	if(file.fail()){
 		cerr << "Erro ao abrir arquivo\n";
 		exit(1);
 	}
+	leituraLixo(13);
 }
 GerenciaArquivo::~GerenciaArquivo(){
 	file.close();
@@ -31,9 +36,9 @@ string GerenciaArquivo::get_arquivo(){
 void GerenciaArquivo::set_arquivo(string arquivo){
 	this->arquivo = arquivo;
 }
-void leituraLixo(int linhas){
-	string linha;
-	for(int i = 0; i<linhas; i++) getline(file, linha);
+void GerenciaArquivo::leituraLixo(int numerolinhas){
+	string leLinha;
+	for(int i = 0; i<numerolinhas; i++) getline(file, leLinha);
 }
 int GerenciaArquivo::leituraCoordenadaLinha(){
 	int linha;
