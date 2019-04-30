@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <vector>
+#include <unistd.h>
 
 using namespace std;
 
@@ -54,10 +55,17 @@ bool Menu::desenhaMenu(){
     cout << "Escolha: ";
     cin >> entrada;
     regras(entrada);
+    //esse if serve para sair após entrar em regras
+    if(entrada == "2. Regras" || entrada == "2" || entrada == "Regras" || entrada == "regras") return 1;
+    cout << entrada << endl;
     if(iniciaJogo(entrada)) return 0;
     else if(encerraJogo(entrada)) return 1;
-    else return 1;
-
+    else {
+        cout << "Entrada Inválida!!!! Tente novamente" << endl;
+        sleep(1.5);
+        desenhaMenu();
+    }
+    return 0;
 }
 bool Menu::iniciaJogo(string entrada){
     if(entrada == "1. Jogar" || entrada == "1" ||entrada == "Jogar" || entrada == "jogar") {
@@ -83,12 +91,12 @@ void Menu::regras(string entrada){
             desenhaMenu();
         }
         else{
-            limpaTela();           
+            limpaTela();  
         }
     }
 }
 bool Menu::encerraJogo(string entrada){
-    if(entrada == "3. Sair" || entrada == "3" || entrada == "Sair" || entrada == "s air") {
+    if(entrada == "3. Sair" || entrada == "3" || entrada == "Sair" || entrada == "sair") {
         limpaTela(); 
         return 1;
     }    

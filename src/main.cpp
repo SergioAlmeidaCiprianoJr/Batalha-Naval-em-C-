@@ -59,18 +59,18 @@ int main(){
 		//turnos
 		int turno = 0;
 		//fim
-		int fim = -1;
+		int fim = -1; // se for 1 -> reinicia e se for 0 -> sai do jogo
 
 		while(1){
 			if(turno%2==0){
 				//turno do jogador1
 				fim = rodada(&jogador1, &jogador2, &submarino, &portaAviao, &canoa, &menu);
-				sleep(2.5);
+				if(fim ==-1) sleep(2.5);
 			}
 			else{
 				//turno do jogador2
 				fim = rodada(&jogador2, &jogador1, &submarino, &portaAviao, &canoa, &menu);
-				sleep(2.5);
+				if(fim ==-1) sleep(2.5);
 			}
 			if(fim!=-1) break;
 			turno++;
@@ -87,6 +87,11 @@ int rodada(Jogador *ataque, Jogador *defesa, Submarino *submarino, PortaAviao *p
 	cout << "Digite 2 coordenadas(linha e coluna, respectivamente) para destruir a embarcação inimiga: ";
 	int linha,coluna;
 	cin >> linha >> coluna;
+	//testando se a entrada é válida ou não
+	while(linha>=13 || linha<0 || coluna>=13 || coluna<0){
+		cout << "As coordenadas só podem ser de 0 até 12, por favor digite entradas válidas: ";
+		cin >> linha >> coluna;
+	}
 	ataque->afundaEmbarcacao(linha, coluna, defesa->get_mapa(), defesa, submarino, portaAviao, canoa);
 	if(ataque->condicaoVitoria(defesa->get_embarcacoesRestantes())){
 		cout << "Deseja voltar ao MENU[S/N]: ";

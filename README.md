@@ -13,6 +13,7 @@ O projeto teve como objetivo construir um jogo de batalha naval para 2 jogadores
 * Um navio só pode ser posicionado na vertical ou horizontal
 * Ao começo de cada turno o jogador deverá definir a posição no mapa em que deseja lançar o míssil (posição x e y)
 * Cada embarcação possui tamanhos e habilidades diferentes
+* O símbolo '~~~' refere-se às ondas, o 'øøø' significa atingido e '***' significa destruído"
 
 ## Embarcações 
 
@@ -45,7 +46,7 @@ Após clonar o repositório:
 
 Entre no diretório:
 ```
-$ cd /ep1
+$ cd ep1
 ```
 
 Para compilar:
@@ -57,6 +58,7 @@ Para rodar:
 ```
 $ make run
 ```
+
 
 ## Créditos e Contatos
 
