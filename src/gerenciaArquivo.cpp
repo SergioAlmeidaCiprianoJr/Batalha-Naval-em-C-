@@ -13,28 +13,24 @@
 using namespace std;
 ifstream file;
 
-GerenciaArquivo::GerenciaArquivo(){
-	arquivo = "";
-}
+GerenciaArquivo::GerenciaArquivo(){}
 
 GerenciaArquivo::GerenciaArquivo(string arquivo){
-	this->arquivo = arquivo;
 	file.open(arquivo);
-	if(file.fail()){
+	while(file.fail()){
 		cerr << "Erro ao abrir arquivo\n";
-		exit(1);
+		cout << "Digite o nome novamente: ";
+		string entrada;
+		string complemento = "doc/";
+		cin >> entrada;
+		complemento += entrada;
+		file.open(complemento);
+		if(file.good()) break;
 	}
 	leituraLixo(13);
 }
 GerenciaArquivo::~GerenciaArquivo(){
 	file.close();
-}
-
-string GerenciaArquivo::get_arquivo(){
-	return arquivo;
-}
-void GerenciaArquivo::set_arquivo(string arquivo){
-	this->arquivo = arquivo;
 }
 void GerenciaArquivo::leituraLixo(int numerolinhas){
 	string leLinha;
