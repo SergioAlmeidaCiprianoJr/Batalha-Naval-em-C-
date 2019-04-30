@@ -21,7 +21,6 @@ int main(){
 
 	//desenhando menu
 	Menu menu;
-	menu.desenhaTitulo();
 	if(menu.desenhaMenu()) return 0;
 	
 	string nomes,entrada;

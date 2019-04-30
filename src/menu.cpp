@@ -17,25 +17,41 @@ void Menu::limpaTela(){
 }
 
 void Menu::desenhaTitulo(){
-    
+    limpaTela();
     cout << endl;
-    cout<<"******     *    ********    *    *       *     *    *            *     *    *    *     *    *    *   "<<endl;
-    cout<<"*     *   * *      **      * *   *       *     *   * *           **    *   * *   *     *   * *   * "<<endl;
-    cout<<"*     *  *   *     **     *   *  *       *     *  *   *          * *   *  *   *  *     *  *   *  *  "<<endl;
-    cout<<"******  *     *    **    *     * *       ******* *     *         *  *  * *     * *     * *     * * "<<endl;
-    cout<<"*     * *******    **    ******* *       *     * *******         *   * * *******  *   *  ******* * "<<endl;
-    cout<<"*     * *     *    **    *     * *       *     * *     *         *    ** *     *   * *   *     * *"<<endl;
-    cout<<"******  *     *    **    *     * ******* *     * *     *         *     * *     *    *    *     * ******* "<<endl<<endl;
+    cout<<"                                 @@@  @@@                                                      @@@@"<<endl;
+    cout<<"@@@@@@@                          @@   @@                     @@@   @@@                         @@@ "<<endl;
+    cout<<"@@@  @@              @           @@   @@                     @@@   @@                          @@  "<<endl;
+    cout<<"@@  @@@             @            @@   @@                     @@@   @@                          @@ "<<endl;
+    cout<<"@@   @@             @            @@   @@                     @@@   @@                          @@  "<<endl;
+    cout<<"@@   @@            @@            @@   @@                     @@@@  @@                          @@  "<<endl;
+    cout<<"@@   @@    @@@@   @@@@@  @@@@    @@   @@@@@     @@@@         @ @@  @@   @@@@ @@@@@@@@  @@@@    @@  "<<endl;
+    cout<<"@@  @@@   @@  @@   @@   @@  @@   @@   @@  @@   @@  @@        @ @@  @@  @  @@  @@@  @@ @@  @@   @@   "<<endl;
+    cout<<"@@@@@@    @@  @@   @@   @@  @@   @@   @@  @@@  @@  @@        @ @@  @@ @@@  @@ @@@  @  @@@ @@   @@  "<<endl;
+    cout<<"@@   @@@  @@  @@   @@   @@  @@   @@   @@  @@@  @@  @@        @  @@ @@ @@@  @@  @@  @  @@@ @@   @@   "<<endl;
+    cout<<"@@    @@  @@ @@@   @@   @@ @@@   @@   @@  @@@  @@ @@@        @  @@ @@  @ @@@@  @@ @@   @ @@@   @@ "<<endl;
+    cout<<"@@    @@@  @@ @@   @@    @@ @@   @@   @@  @@@   @@ @@        @  @@ @@  @@@ @@  @@ @    @@@@@   @@"<<endl;
+    cout<<"@@    @@@@@@  @@   @@  @@@  @@   @@   @@  @@@ @@@  @@        @  @@@@@ @@@  @@   @@@   @@  @@   @@"<<endl;
+    cout<<"@@    @@@@@   @@   @@  @@   @@   @@   @@  @@@ @@   @@        @   @@@@ @@   @@   @@@  @@@  @@   @@ "<<endl;
+    cout<<"@@    @@@@@   @@ @ @@  @@   @@ @ @@  @@@  @@@ @@   @@ @      @   @@@@ @@  @@@@  @@@  @@@  @@@@ @@@"<<endl;
+    cout<<"@@    @@@@@   @@ @ @@  @@   @@ @ @@  @@@  @@@ @@   @@ @      @   @@@@ @@  @@@@  @@@  @@@  @@@@ @@@ " <<endl;
+    cout<<"@@    @@@ @@@@ @@@ @@   @@@@ @@@@@@@ @@@@@@@@@ @@@@ @@@      @   @@@@ @@@@@@@@  @@    @@@@@@@@@@@@ "<<endl;
+    cout<<"@@    @@           @@  @                                     @    @@@ "<<endl;
+    cout<<"@@@    @@            @@@@                                    @    @@@   "<<endl;
+    cout<<"@@@   @@                                                     @@   @@@ "<<endl;
+    cout<<"@@@@@@@                                                      @@@   @@@   "<<endl<<endl<<endl;
+             
 }   
 
 bool Menu::desenhaMenu(){
 
+    desenhaTitulo();
     cout << "MENU:" << endl << endl;
     cout << "1. Jogar" << endl;
     cout << "2. Regras" << endl;
     cout << "3. Sair" << endl<<endl; 
 
-    cout << "Digite a opção do menu desejada: ";
+    cout << "Escolha: ";
     cin >> entrada;
     regras(entrada);
     if(iniciaJogo(entrada)) return 0;
@@ -44,14 +60,14 @@ bool Menu::desenhaMenu(){
 
 }
 bool Menu::iniciaJogo(string entrada){
-    if(entrada == "1. Jogar" || entrada == "1" ||entrada == "Jogar") {
+    if(entrada == "1. Jogar" || entrada == "1" ||entrada == "Jogar" || entrada == "jogar") {
         limpaTela();
         return 1;
     }    
     else return 0;
 }
 void Menu::regras(string entrada){
-    if(entrada == "2. Regras" || entrada == "2" ||entrada == "Regras"){
+    if(entrada == "2. Regras" || entrada == "2" || entrada == "Regras" || entrada == "regras"){
         limpaTela();
         cout << "REGRAS:" << endl << endl;
         cout << "1.Cada jogador define seu nome e a posição de cada embarcação" << endl;
@@ -71,7 +87,7 @@ void Menu::regras(string entrada){
     }
 }
 bool Menu::encerraJogo(string entrada){
-    if(entrada == "3. Sair" || entrada == "3" ||entrada == "Sair") {
+    if(entrada == "3. Sair" || entrada == "3" || entrada == "Sair" || entrada == "s air") {
         limpaTela(); 
         return 1;
     }    
