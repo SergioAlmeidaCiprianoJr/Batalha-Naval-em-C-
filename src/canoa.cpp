@@ -24,7 +24,7 @@ Canoa::~Canoa(){
 
 int Canoa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
     if(mapa[coordenadaLinha][coordenadaColuna] == "Canoa"){
-		printf("\tVocê acabou de destruir a Canoa inimiga!!\n");
+		printf("\nVocê acabou de destruir a Canoa inimiga!!\n");
         return 0;//atingiu
 	}
     return 1;

@@ -92,18 +92,18 @@ void Mapa::posicionaCanoa(int coordenadaLinha, int coordenadaColuna){
 void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa, Mapa *alvo, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa){
     int resultado;
     if(mapa[coordenadaLinha][coordenadaColuna] != "agua"){
-        if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\tVocê já destruiu essa posição!!\n";
+        if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\nVocê já destruiu essa posição!!\n";
         else if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao") {
             resultado = portaAviao->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
-                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruido");
                 alvo->set_embarcacoesRestantes(-1);
             }    
         }
         else if(mapa[coordenadaLinha][coordenadaColuna] == "Submarino" || mapa[coordenadaLinha][coordenadaColuna] == "atingido") {
             resultado = submarino->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
-                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruido");
                 alvo->set_embarcacoesRestantes(-1);
             }    
             else if(resultado == -1){
@@ -113,10 +113,10 @@ void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<ve
         else if(mapa[coordenadaLinha][coordenadaColuna] == "Canoa"){
             resultado = canoa->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
-                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruído");
+                alvo->set_mapa(coordenadaLinha, coordenadaColuna, "destruido");
                 alvo->set_embarcacoesRestantes(-1);
             } 
         }
     }
-    else cout << "\tVocê acertou a água\n";
+    else cout << "\nVocê acertou a água!!!\n";
 }

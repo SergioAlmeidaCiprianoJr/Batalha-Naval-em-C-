@@ -22,9 +22,12 @@ Submarino::~Submarino(){
 }
 
 int Submarino::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa){
-    if(mapa[coordenadaLinha][coordenadaColuna] == "Submarino") return -1;//atingido
+    if(mapa[coordenadaLinha][coordenadaColuna] == "Submarino") {
+        printf("\nVocê acabou de atingir uma parte submarino inimigo!!\n");
+        return -1;//atingido
+    }
     else if(mapa[coordenadaLinha][coordenadaColuna] == "atingido") {
-        printf("\tVocê acabou de atingir o submarino inimigo!!\n");
+        printf("\nVocê acabou de destruir uma parte submarino inimigo!!\n");
         return 0;//destruído
     }
     return 1;

@@ -73,8 +73,9 @@ void Menu::regras(string entrada){
         cout << "1.Cada jogador define seu nome e a posição de cada embarcação" << endl;
         cout << "2.Para definir a posição das embarcações basta alterar os arquivos na pasta 'doc', ou inserir um novo" << endl;
         cout << "3.Um navio só pode ser posicionado na vertical ou horizontal" << endl;
-        cout << "4.Ao começo de cada turno o jogador deverá definir a posição no mapa em que deseja lançar o míssil(posição x e y)" << endl;
-        cout << "5.Cada embarcação possui tamanhos e habilidades diferentes" << endl << endl; 
+        cout << "4.Ao começo de cada turno o jogador deverá definir a posição no mapa em que deseja lançar o míssil(linha e coluna)" << endl;
+        cout << "5.Cada embarcação possui tamanhos e habilidades diferentes" << endl; 
+        cout << "6.O símbolo '~~~' refere-se às ondas, o 'øøø' significa atingido e '***' significa destruído" << endl << endl;
         cout << "Deseja voltar ao MENU[S/N]: ";
         cin >> entrada;
         if(entrada == "S" || entrada == "s") {

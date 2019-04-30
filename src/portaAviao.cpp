@@ -26,11 +26,11 @@ int PortaAviao::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vect
             srand (time(NULL));
             int probabilidadeDesviar = rand() % 2 + 1;
             if(probabilidadeDesviar%2 == 0) {
-                printf("\tVocê achou o Porta Aviões, mas ele desviou seu míssil!!\n");
+                printf("\nVocê achou o Porta Aviões, mas ele desviou seu míssil!!\n");
                 return -1;//não atingiu
             }	
             else {
-                printf("\tVocê acabou de atingir o Porta Aviões inimigo!!\n");
+                printf("\nVocê acabou de atingir o Porta Aviões inimigo!!\n");
                 return 0;//atingiu
             }	
     }
