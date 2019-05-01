@@ -32,13 +32,14 @@ int main(){
 
 		//criando jogador1
 		cout << "Player1 digite seu nome: ";
-		cin >> nomes;
+		getchar();//pegando '\n' anterior para não dar problema no getline
+		getline(cin, nomes);
 		Jogador jogador1(nomes);
 		menu.limpaTela();
 
 		//criando jogador2
 		cout << "Player2 digite seu nome: ";
-		cin >> nomes;
+		getline(cin, nomes);
 		Jogador jogador2(nomes);
 		menu.limpaTela();
 

@@ -64,6 +64,7 @@ bool Menu::desenhaMenu(){
         sleep(1.5);
         desenhaMenu();
     }
+    if(iniciaJogo(entrada)) return 0;
     return 1;
 }
 bool Menu::iniciaJogo(string entrada){
