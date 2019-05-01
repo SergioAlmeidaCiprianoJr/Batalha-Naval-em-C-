@@ -57,7 +57,6 @@ bool Menu::desenhaMenu(){
     regras(entrada);
     //esse if serve para sair após entrar em regras
     if(entrada == "2. Regras" || entrada == "2" || entrada == "Regras" || entrada == "regras") return 1;
-    cout << entrada << endl;
     if(iniciaJogo(entrada)) return 0;
     else if(encerraJogo(entrada)) return 1;
     else {
@@ -65,7 +64,7 @@ bool Menu::desenhaMenu(){
         sleep(1.5);
         desenhaMenu();
     }
-    return 0;
+    return 1;
 }
 bool Menu::iniciaJogo(string entrada){
     if(entrada == "1. Jogar" || entrada == "1" ||entrada == "Jogar" || entrada == "jogar") {
