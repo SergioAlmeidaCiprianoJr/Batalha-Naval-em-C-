@@ -16,7 +16,7 @@ public:
     GerenciaArquivo(string arquivo);    
     ~GerenciaArquivo();
     
-    void leituraLixo(int numerolinhas);//ignora algumas linhas do arquivo inuteis para criar o mapa
+    void leituraLixo(string jogador);//ignora algumas linhas do arquivo inuteis para criar o mapa
     void leitura(Jogador *jogador, Submarino *submarino, PortaAviao *portaAviao);
 
 };

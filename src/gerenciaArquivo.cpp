@@ -11,7 +11,7 @@
 #include <vector>
 
 using namespace std;
-ifstream file;
+static ifstream file;
 
 GerenciaArquivo::GerenciaArquivo(){}
 
@@ -27,14 +27,16 @@ GerenciaArquivo::GerenciaArquivo(string arquivo){
 		file.open(complemento);
 		if(file.good()) break;
 	}
-	leituraLixo(13);
 }
 GerenciaArquivo::~GerenciaArquivo(){
 	file.close();
 }
-void GerenciaArquivo::leituraLixo(int numerolinhas){
+void GerenciaArquivo::leituraLixo(string jogador){
 	string leLinha;
-	for(int i = 0; i<numerolinhas; i++) getline(file, leLinha);
+	while(1){
+		 getline(file, leLinha);
+		 if(leLinha == jogador) break;
+	}
 }
 void GerenciaArquivo::leitura(Jogador *jogador, Submarino *submarino, PortaAviao *portaAviao){	
 	for(int i = 0; i<12; i++){

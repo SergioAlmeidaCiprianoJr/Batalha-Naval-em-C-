@@ -51,10 +51,11 @@ int main(){
 
 		//escaneando e posicionando barcos no mapa do jogador1
 		GerenciaArquivo arquivo(nomes);
+		arquivo.leituraLixo("# player_1");
 		arquivo.leitura(&jogador1, &submarino, &portaAviao);
 		
 		//escaneando e posicionando barcos no mapa do jogador2
-		arquivo.leituraLixo(5);
+		arquivo.leituraLixo("# player_2");
 		arquivo.leitura(&jogador2, &submarino, &portaAviao);
 
 		//turnos
