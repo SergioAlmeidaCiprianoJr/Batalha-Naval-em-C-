@@ -29,7 +29,7 @@ void Mapa::tamanhoMapa(int coluna, int linha){
     {
         for(int i = 0 ; i < linha ; ++i)
         {
-            mapa[j][i] = "agua";
+            mapa[j][i] = "desconhecido";
         }
     }
 }
@@ -52,7 +52,8 @@ void Mapa::desenhaMapa(){
         for(int coluna = 0; coluna<13; coluna++){
             if(mapa[linha][coluna] == "atingido") printf("øøø "); //atingido       
             else if(mapa[linha][coluna] == "destruido") printf("*** "); //destruído
-            else printf("~~~ ");
+            else if(mapa[linha][coluna] == "agua") printf("~~~ ");
+            else printf("??? ");
         }
         cout << endl;
         colunaAtual++;
@@ -91,8 +92,9 @@ void Mapa::posicionaCanoa(int coordenadaLinha, int coordenadaColuna){
 
 void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<vector<string>> mapa, Mapa *alvo, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa){
     int resultado;
-    if(mapa[coordenadaLinha][coordenadaColuna] != "agua"){
+    if(mapa[coordenadaLinha][coordenadaColuna] != "desconhecido"){
         if(mapa[coordenadaLinha][coordenadaColuna] == "destruido") cout << "\nVocê já destruiu essa posição!!\n";
+        else if(mapa[coordenadaLinha][coordenadaColuna] == "agua") cout << "\nVocê acertou a água!!!\n";
         else if(mapa[coordenadaLinha][coordenadaColuna] == "PortaAviao") {
             resultado = portaAviao->afundaEmbarcacao(coordenadaLinha, coordenadaColuna, mapa);
             if(!resultado) {
@@ -118,5 +120,8 @@ void Mapa::afundaEmbarcacao(int coordenadaLinha, int coordenadaColuna, vector<ve
             } 
         }
     }
-    else cout << "\nVocê acertou a água!!!\n";
+    else{
+        alvo->set_mapa(coordenadaLinha, coordenadaColuna, "agua");
+        cout << "\nVocê acertou a água!!!\n";
+    }
 }

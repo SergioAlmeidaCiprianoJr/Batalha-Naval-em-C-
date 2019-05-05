@@ -86,6 +86,8 @@ int main(){
 int rodada(Jogador *ataque, Jogador *defesa, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa, Menu *menu){
 	defesa->desenhaMapa();
 	cout << ataque->get_nome() << " esse é o mapa do seu oponente!!" << endl;
+	cout << "Vida " << ataque->get_nome() << ": " << ataque->get_embarcacoesRestantes() << endl;
+	cout << "Vida " << defesa->get_nome() << ": " << defesa->get_embarcacoesRestantes() << endl;
 	cout << "Digite 2 coordenadas(linha e coluna, respectivamente) para destruir a embarcação inimiga: ";
 	int linha,coluna;
 	cin >> linha >> coluna;
