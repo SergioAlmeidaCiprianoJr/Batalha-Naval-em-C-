@@ -22,6 +22,7 @@ public:
 	string get_nome();
 	void set_nome(string nome);
     bool condicaoVitoria(int embarcacoesRestantesInimigo);
+    int rodada(Jogador *defesa, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa);
     
 };
 

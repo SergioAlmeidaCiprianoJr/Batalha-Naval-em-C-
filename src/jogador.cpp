@@ -37,3 +37,33 @@ bool Jogador::condicaoVitoria(int embarcacoesRestantesInimigo){
 	}
 	else return false;
 }
+
+int Jogador::rodada(Jogador *defesa, Submarino *submarino, PortaAviao *portaAviao, Canoa *canoa){
+	defesa->desenhaMapa();
+	cout << get_nome() << " esse é o mapa do seu oponente!!" << endl;
+	cout << "Vida " << get_nome() << ": " << get_embarcacoesRestantes() << endl;
+	cout << "Vida " << defesa->get_nome() << ": " << defesa->get_embarcacoesRestantes() << endl;
+	cout << "Digite 2 coordenadas(linha e coluna, respectivamente) para destruir a embarcação inimiga: ";
+	int linha,coluna;
+	cin >> linha >> coluna;
+	//testando se a entrada é válida ou não
+	while(linha>=13 || linha<0 || coluna>=13 || coluna<0){
+		cout << "As coordenadas só podem ser de 0 até 12, por favor digite entradas válidas: ";
+		cin >> linha >> coluna;
+	}
+	afundaEmbarcacao(linha, coluna, defesa->get_mapa(), defesa, submarino, portaAviao, canoa);
+	if(condicaoVitoria(defesa->get_embarcacoesRestantes())){
+		cout << "Deseja voltar ao MENU[S/N]: ";
+		string entrada;
+		cin >> entrada;
+		if(entrada == "S" || entrada == "s") {
+			return 1;
+		}	
+		else {
+			cout << "\033[2J\033[1;1H";
+			return 0;
+		}
+		return 0;
+	}
+	return -1;
+}
