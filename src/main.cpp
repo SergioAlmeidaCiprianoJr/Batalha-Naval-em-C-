@@ -32,7 +32,6 @@ int main(){
 
 		//criando jogador1
 		cout << "Player1 digite seu nome: ";
-		getchar();//pegando '\n' anterior para não dar problema no getline
 		getline(cin, nomes);
 		Jogador jogador1(nomes);
 		menu.limpaTela();
