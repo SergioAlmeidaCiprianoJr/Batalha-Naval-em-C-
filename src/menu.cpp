@@ -53,7 +53,7 @@ bool Menu::desenhaMenu(){
     cout << "3. Sair" << endl<<endl; 
 
     cout << "Escolha: ";
-    cin >> entrada;
+    getline(cin, entrada);
     regras(entrada);
     //esse if serve para sair após entrar em regras
     if(entrada == "2. Regras" || entrada == "2" || entrada == "Regras" || entrada == "regras") return 1;
@@ -86,7 +86,7 @@ void Menu::regras(string entrada){
         cout << "6.No mapa, o símbolo ~~~ refere-se às ondas, o øøø significa atingido, *** significa destruído e ??? desconhecido" << endl;
         cout << "7.Faça a vida de seu oponente zerar e ganhe a partida" << endl << endl;
         cout << "Deseja voltar ao MENU[S/N]: ";
-        cin >> entrada;
+        getline(cin, entrada);
         if(entrada == "S" || entrada == "s") {
             limpaTela();
             desenhaMenu();
